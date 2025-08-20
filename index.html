@@ -1,146 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Samip Spk Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #f0f4f8;
-      color: #333;
-      line-height: 1.6;
-    }
-    header {
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      color: rgb(215, 215, 215);
-      text-align: center;
-      padding: 60px 20px;
-    }
-    header img {
-      border-radius: 100%;
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      margin-bottom: 15px;
-      border: 3px solid white;
-    }
-    section {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
-      animation: fadeIn 1s ease-in-out;
-    }
-    h2 {
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 6px;
-      margin-bottom: 16px;
-      color: #2c5364;
-    }
-    ul li {
-      margin-bottom: 8px;
-    }
-
-    .experience{
-      background: white;
-      padding: 16px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    
-    a {
-      color: #2c5364;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    footer {
-      text-align: center;
-      background: #e0e0e0;
-      padding: 20px;
-      font-size: 14px;
-      margin-top: 40px;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamro Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<header>
-  <img src="your-photo.jpg" alt="Editing" />
-  <h1>Samip Sapkota</h1>
-  <p>IT Person | Hardware & Networking | Web Developer</p>
-  <h4>"CHITWAN NEPAL"</h4>
-</header>
-
-<section>
-   <h2>About Me</h2>
-  <p>
-   I am passionate about IT with strong interest in 
-    <b>hardware, networking, and web development</b>. I enjoy solving technical 
-    problems and continuously learning new technologies to stay up to date with 
-    the ever-changing IT field.
-  </p>
-  <p>
-    With good communication skills and the ability to adapt quickly, I work 
-    effectively both independently and within a team. I value discipline, 
-    attention to detail, and always approach tasks with a positive mindset.
-  </p>
-  <p><b>Key Strengths</b></p>
+    <header>
+        <h1>🛍️Hamro Shop</h1>
+        <nav>
+  
   <ul>
-    <li>Fast learner with strong problem-solving skills</li>
-    <li>Effective communicator in multi-disciplinary teams</li>
-    <li>Adaptable to new tools, technologies, and environments</li>
-    <li>Strong work ethic with focus on quality and detail</li>
-    <li>Motivated to take on new challenges in IT</li>
+    <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+    <li><a href="#products"><i class="fas fa-box-open"></i> Products</a></li>
+
+   
+    <li class="cart-link">
+      <a href="#cart">
+        <i class="fas fa-shopping-cart"></i> 
+        Cart (<span id="cart-count">0</span>)
+      </a>
+    </li>
+
+    
+    <li id="auth-links">
+  <a href="#login" id="login-link">
+    <i class="fas fa-sign-in-alt"></i> Login
+  </a>
+  <a href="#register" id="register-link">
+    <i class="fas fa-user-plus"></i> Register
+  </a>
+</li>
+
+
+    
+    <li id="user-greeting" style="display:none;">
+      <i class="fas fa-user-circle"></i>
+      <span id="username-display"></span>
+      <a href="#logout" id="logout-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </li>
   </ul>
-  <h2>Education</h2>
-  <ul>
-    <li>+2 (Higher Secondary Education)</li>
-    <li>Diploma in Computer Hardware and Networking</li>
-     <li> Diploma in Laptop Chip-Level Repair</li>
-  </ul>
+</nav>
 
-  <h2>Skills/Working on</h2>
-  <ul>
-    <li>Laptop repair (diagnostics, hardware replacements)</li>
-    <li>Basic networking (router setup, IP configuration)</li>
-    <li>Installing Closed-Circuit Television (CCTV) camera</li>
-    <li>HTML, CSS, JavaScript</li>
-  </ul>
+    </header>
+    <main>
+        <div id="login-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Login</h2>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-email">Email:</label>
+                        <input type="email" id="login-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password:</label>
+                        <input type="password" id="login-password" required>
+                    </div>
+                    <button type="submit">Login</button>
+                    <p id="login-error" class="error-message"></p>
+                </form>
+            </div>
+        </div>
 
-  <section>
-    <h2>Experience</h2>
-    <div class="experience">
-      <h3>Computer Lab Teacher</h3>
-      <p>Guided students in computer fundamentals, practical lab sessions, 
-      and basic IT troubleshooting.</p>
-    </div>
-  </section>  
- 
-  <h2>Contact</h2>
-  <p>Mobile Number:9866116730</p>
-  <p>Email: <a href="mailto:sameepspk002@gmail.com" target="_blank">sameepspk002@gmail.com</a></p>
-  <p>GitHub: <a href="https://github.com/samipspk" target="_blank">github.com/samipspk</a></p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/samipspk" target="_blank">www.linkedin.com/in/samipspk</a></p>
-</section>
+        
+        <div id="register-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Register</h2>
+                <form id="register-form">
+                    <div class="form-group">
+                        <label for="register-name">Name:</label>
+                        <input type="text" id="register-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email">Email:</label>
+                        <input type="email" id="register-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Password:</label>
+                        <input type="password" id="register-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-confirm">Confirm Password:</label>
+                        <input type="password" id="register-confirm" required>
+                    </div>
+                    <button type="submit">Register</button>
+                    <p id="register-error" class="error-message"></p>
+                </form>
+            </div>
+        </div>
 
-<footer>
-  &copy; 2025 Samipspk. All rights reserved.
-</footer>
+        <section id="products" class="products">
+            <h2>Our Products</h2>
+            <div class="product-grid" id="product-grid">
+               
+            </div>
+        </section>
 
+        <section id="cart" class="cart">
+            
+            <div class="cart-items" id="cart-items">
+                <p class="empty-cart">Your cart is empty</p>
+            </div>
+            <div class="cart-total">
+                <p>Total: <span id="cart-total">0.00</span></p>
+                <button id="checkout-btn" disabled>Checkout</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Hamro Shop. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

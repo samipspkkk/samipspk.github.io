@@ -249,7 +249,7 @@ footer {
     background: #ffffff;
     margin: 8% auto;
     padding: 2rem;
-    border-radius: 12px;
+    border-radius: 50px;
     width: 90%;
     max-width: 420px;
     position: relative;
@@ -270,7 +270,7 @@ footer {
 
 .close-modal:hover {
     color: #e74c3c;
-    transform: rotate(90deg);
+    
 }
 
 
